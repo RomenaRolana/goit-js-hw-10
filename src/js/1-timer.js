@@ -33,12 +33,11 @@ const options = {
 
 flatpickr(datetimePicker, options);
 
-startButton.addEventListener('click', () => {
-    startButton.disabled = true;
-    startCountdown();
-});
+startButton.addEventListener('click', startCountdown);
 
 function startCountdown() {
+    startButton.disabled = true;
+
     const countdown = setInterval(() => {
         const now = new Date().getTime();
         const timeLeft = userSelectedDate - now;
